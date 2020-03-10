@@ -1,0 +1,15 @@
+.background-container {
+    background-image: url('./images/joshua-sortino-LqKhnDzSF-8-unsplash.jpg');
+    background-repeat: repeat-y;
+    background-size: contain;
+}
+.movie-list-title {
+    background: rgba(0, 0, 0, 0.8);
+    color: white;
+    padding: 1rem;
+}
+.movieList-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}

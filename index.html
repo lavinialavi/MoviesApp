@@ -16,6 +16,7 @@
     <!-- Latest compiled JavaScript -->
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
     <link rel="stylesheet" href="//use.fontawesome.com/releases/v5.0.7/css/all.css"/>
+    <link rel="stylesheet" href="./assets/mainstyle.css"/>
     <script src="main.js" defer></script>
     <script src="pages.js" defer></script>
     
@@ -57,15 +58,15 @@
 
   <!-- content -->
   <div class="background-container">
-    <div id="movie-list"class="movieList-container card-deck">
-    <h2 class="movie-list-title">MOVIE LIST</h2>
-    <div id="movieList"></div>
-    <div class="page-counter">
-      <button class="first-page btn btn-outline-dark"><i class="fas fa-fast-backward"></i></i></button>
-      <button class="previous-page btn btn-outline-dark"><i class="fas fa-arrow-circle-left"></i></button>
-      <div class="pageNumber"></div>
-      <button class="next-page btn btn-outline-dark"><i class="fas fa-arrow-circle-right"></i></button>
-      <button class="last-page btn btn-outline-dark"><i class="fas fa-fast-forward"></i></i></button>
+    <div id="movie-list"class="movieList-container">
+      <h2 class="movie-list-title">MOVIE LIST</h2>
+      <div id="movieList" class="card-deck justify-content-center"></div>
+      <div class="page-counter">
+        <button class="first-page btn btn-outline-dark"><i class="fas fa-fast-backward"></i></i></button>
+        <button class="previous-page btn btn-outline-dark"><i class="fas fa-arrow-circle-left"></i></button>
+        <div class="pageNumber"></div>
+        <button class="next-page btn btn-outline-dark"><i class="fas fa-arrow-circle-right"></i></button>
+        <button class="last-page btn btn-outline-dark"><i class="fas fa-fast-forward"></i></i></button>
     </div>
   </div>
 
