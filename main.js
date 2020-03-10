@@ -80,8 +80,8 @@ function createMovieItem(movie) {
   itemContainer.classList.add("movie-item");
  
   itemContainer.innerHTML = `
-    <div class="card bg-warning stretched-link" style="width:300px">
-    <img class="poster card-img-top" src='${movie.Poster}'/>
+    <div class="card h-100 bg-warning stretched-link">
+    <img class="poster card-img-top" src='${movie.Poster}' alt="Batman movie poster"/>
     <div class="card-body">
       <h3 class="movieItem-Title card-title">${movie.Title}</h3>
       <p class="movieItem-details card-text">${movie.Year}, ${movie.Genre}</p>
