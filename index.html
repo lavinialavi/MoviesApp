@@ -16,9 +16,12 @@
     <!-- Latest compiled JavaScript -->
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
     <link rel="stylesheet" href="//use.fontawesome.com/releases/v5.0.7/css/all.css"/>
+    <script src="main.js" defer></script>
+    <script src="pages.js" defer></script>
     
 </head>
 <body>
+  <!-- navigation -->
   <nav class="navbar navbar-expand-sm bg-dark navbar-dark justify-content-between">
     <!-- Brand/logo -->
     <a class="navbar-brand" href="#">MyIMDb
@@ -34,9 +37,12 @@
             <a class="nav-link" href="#">Sign In</a>
           </li>
           <li class="nav-item">
+            <a class="nav-link" href="#">Register</a>
+          </li>
+          <li class="nav-item">
             <a class="nav-link" href="#">Home</a>
           </li>
-          <li class="nav-item">test
+          <li class="nav-item">
             <a class="nav-link" href="#">About</a>
           </li>
           <li class="nav-item" id="search-button">
@@ -48,8 +54,23 @@
       </div>
     </div>
   </nav>
-  <div class="movieList">sfvlnfgd </div>
 
-  <script src="main.js"></script>    
+  <!-- content -->
+  <div class="background-container">
+    <div id="movie-list"class="movieList-container card-deck">
+    <h2 class="movie-list-title">MOVIE LIST</h2>
+    <div id="movieList"></div>
+    <div class="page-counter">
+      <button class="first-page btn btn-outline-dark"><i class="fas fa-fast-backward"></i></i></button>
+      <button class="previous-page btn btn-outline-dark"><i class="fas fa-arrow-circle-left"></i></button>
+      <div class="pageNumber"></div>
+      <button class="next-page btn btn-outline-dark"><i class="fas fa-arrow-circle-right"></i></button>
+      <button class="last-page btn btn-outline-dark"><i class="fas fa-fast-forward"></i></i></button>
+    </div>
+  </div>
+
+  
+
+  <!-- <script src="main.js"></script>     -->
 </body>
 </html>
