@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>MyIMDb</title>
+    <!-- Latest compiled and minified CSS -->
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+    />
+
+    <!-- jQuery library -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
+    <!-- Popper JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <!-- Bootstrap -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+
+    <!-- Latest compiled JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+    <link
+      rel="stylesheet"
+      href="//use.fontawesome.com/releases/v5.0.7/css/all.css"
+    />
+    <script src="main.js"></script>
+    <script src="movieDetails.js" defer></script>
+  </head>
+  <body>
+    <!-- navigation -->
+    <nav
+      class="navbar navbar-expand-sm bg-dark navbar-dark justify-content-between"
+    >
+      <!-- Brand/logo -->
+      <a class="navbar-brand" href="#"
+        >MyIMDb
+        <i class="fas fa-film"></i>
+      </a>
+      <div>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-toggle="collapse"
+          data-target="#collapsibleNavbar"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="collapsibleNavbar">
+          <ul class="navbar-nav">
+            <li class="nav-item">
+              <button
+                onclick="document.getElementById('id01').style.display='block'"
+                style="width:auto;"
+              >
+                Log-in
+              </button>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Register</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="index.html">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">About</a>
+            </li>
+            <li class="nav-item" id="search-button">
+              <a class="nav-link" href="#">
+                <i class="fas fa-search fa-lg"></i>
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <!-- main -->
+    <div id="movieDetails">
+      <div id="posterDetails"></div>
+      <div id="contentDetails"></div>
+    </div>
+    <footer class="footer container-fluid">
+      <p>
+        <i class="far fa-copyright"></i> Group 4 SIIT Web Development. All
+        rights reserved
+      </p>
+      <p>
+        Made with: <i class="fab fa-html5"></i>,
+        <i class="fab fa-css3-alt"></i>, <i class="fab fa-js"></i>,
+        <i class="fab fa-bootstrap"></i> and <i class="fas fa-coffee"></i> by
+        our team:
+      </p>
+      <p>
+        <a href="https://www.linkedin.com/in/timisalin/" target="_blank">Alin</a
+        >,
+        <a
+          href="https://www.linkedin.com/in/lavinia-budean-744839a7/"
+          target="_blank"
+          >Lavinia</a
+        >,
+        <a
+          href="https://www.linkedin.com/in/oana-fuia-04741428/"
+          target="_blank"
+          >Oana</a
+        >
+        and
+        <a
+          href="https://www.linkedin.com/in/sebastian-mihai-s%C4%83s%C4%83ujan-0a3161192/"
+          target="_blank"
+          >Sebastian</a
+        >.
+      </p>
+    </footer>
+  </body>
+</html>
