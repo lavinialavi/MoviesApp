@@ -7,9 +7,6 @@ let pageNr;
 let nrOfPages;
 
 
-
-
-
 function getDataFromServer(param) {
   fetch(param)
     .then(parseResponse)
