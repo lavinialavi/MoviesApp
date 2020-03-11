@@ -8,9 +8,8 @@ window.onclick = function(event) {
     }
 }
 
-
-$(document).ready(function(){
-  $("#id01").click(function(){
-    $("#myModal").modal();
-  });
-});
+// $(document).ready(function(){
+//   $("#id01").click(function(){
+//     $("#myModal").modal();
+//   });
+// });
