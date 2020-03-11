@@ -7,3 +7,10 @@ window.onclick = function(event) {
         modal.style.display = "none";
     }
 }
+
+
+$(document).ready(function(){
+  $("#id01").click(function(){
+    $("#myModal").modal();
+  });
+});
