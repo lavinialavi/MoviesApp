@@ -31,6 +31,10 @@ function displayMovie(movies) {
 }
 document.getElementById("movieList");
 
+function setLocal(movie) {
+  sessionStorage.setItem("movieID", movie._id);
+}
+
 function createMovieItem(movie) {
   const itemContainer = document.createElement("div");
   itemContainer.classList.add("movie-item");
@@ -58,9 +62,9 @@ function createMovieItem(movie) {
   </div>`;
   }
   movieList.appendChild(itemContainer);
-
+  
   const a = document.querySelector(".movieDetailsLink");
-  a.addEventListener("click", sessionStorage.setItem("movieID", movie._id));
+  a.addEventListener("click", setLocal(movie));
 }
-
+  // });
 getDataFromServer(apiURL);
