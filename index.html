@@ -206,7 +206,7 @@
       
       <div id="id01" class="modal">
         
-        <form id="myForm" class="modal-content animate" action="https://movies-api-siit.herokuapp.com/auth/login" method="post">
+        <form id="myForm" class="modal-content animate"  method="post">
           <div class="imgcontainer">
             <span onclick= "document.getElementById('id01').style.display='none'" class="close" title="Close Modal">&times;</span>
             <img src="/assets/images/avatar.png" alt="Avatar" class="avatar"> 
@@ -219,7 +219,7 @@
             <label for="psw"><b>Password</b></label>
             <input  id="pass" type="password" placeholder="Enter Password" name="psw" required>
               
-            <button  class ="buttton" type="submit">Login</button>
+            <button   id="logInSubmit"  class ="buttton" type="button">Login</button>
             <label>
               <input type="checkbox" checked="checked" name="remember"> Remember me
             </label>
