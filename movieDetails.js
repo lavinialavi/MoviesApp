@@ -60,9 +60,9 @@ function getMovieDetails(movie) {
       if(movie.Ratings[1]) {
         ratings.innerHTML =
       "Source: " +
-      movie.Ratings[0].Source +
+      movie.Ratings[1].Source +
       " Value: " +
-      movie.Ratings[0].Value
+      movie.Ratings[1].Value
       }
   var imdbRating = document.createElement("p");
   if(movie.imdbRating != "N/A"){
