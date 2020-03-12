@@ -9,12 +9,18 @@ let nrOfPages;
 function getDataFromServer(param) {
   fetch(param)
     .then(parseResponse)
-    .then(displayMovie);
+    .then(displayMovie)
+    .catch(error);
 }
 function parseResponse(response) {
+  if (response.status !== 200) {
+    throw new Error('Network response was not ok');
+  }
   return response.json();
 }
-
+function error(error) {
+  console.error('There has been a problem with your fetch operation:', error);
+}
 function displayMovie(movies) {
   pageNr = movies.pagination.currentPage;
   nrOfPages = movies.pagination.numberOfPages;
@@ -31,7 +37,7 @@ function displayMovie(movies) {
 }
 document.getElementById("movieList");
 
-function setLocal(movie) {
+function setSessionId(movie) {
   sessionStorage.setItem("movieID", movie._id);
 }
 
@@ -64,7 +70,7 @@ function createMovieItem(movie) {
   movieList.appendChild(itemContainer);
   
   const a = document.querySelector(".movieDetailsLink");
-  a.addEventListener("click", setLocal(movie));
+  a.addEventListener("click", setSessionId(movie));
 }
   // });
 getDataFromServer(apiURL);

@@ -1,17 +1,51 @@
+html {
+    height: 100%;
+    box-sizing: border-box;
+  }
+  
+  *,
+  *:before,
+  *:after {
+    box-sizing: inherit;
+  }
+  
 body{
     background-image: url("./images/elijah-flores-44se2xSCo00-unsplash.jpg");
-    background-repeat: no-repeat;
+    background-repeat: repeat-y;
     background-size: cover;
+    position: relative;
+    border-bottom: 8.5rem;
 }
 .row {
     display: flex;
     justify-content: center;
     margin-top: 2rem;
     color:white;
+    position:relative;
+    padding-bottom: 8.5rem;
 }
-.poster, .details {
-    background-color: black;
+.details {
     padding: 2rem;
+    background-color: black;
 }
-
-
+.posterStyling {
+    background-color: black;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.add, .edit, .delete {
+    margin: 0.5rem;
+}
+.footer {
+    padding: 0.5rem;
+    background-color: black;
+    color: white;
+    text-align: center;
+    position: absolute;
+    bottom: 0;
+}
+.footer a {
+    color: rgb(255,193,7);
+   
+}
