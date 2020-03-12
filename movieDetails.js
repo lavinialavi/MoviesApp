@@ -1,5 +1,23 @@
 let movieURL = `https://movies-api-siit.herokuapp.com/movies/`;
 
+// function getMovieIdFromURL() {
+//   // This is for the case we have multiple variables in URL
+//   var query = window.location.search.substring(1).split('&');
+//   for (var i = 0; i < query.length; i++) {
+//       var queryTemp = query[i].split('=');
+//       // if is the one wee need just returns the value
+//       if(queryTemp[0] === 'movieId') {
+//           return queryTemp[1];
+//       } else {
+//           //this is just in case we do not find the value, returs the first article
+//           //I set this not to crash...
+//           alert("MovieId is invalid! You will be redirected");
+//           window.location.href = "home.html";
+//           //return 1;
+//       }
+//   }
+// }
+// let movieID = getMovieIdFromURL();
 let movieID = sessionStorage.getItem("movieID");
 function getMovieItem() {
   fetch(movieURL + movieID)
@@ -48,13 +66,14 @@ function getMovieDetails(movie) {
   var awards = document.createElement("p");
   awards.innerHTML = `Awards: ${movie.Awards}`;
   var ratings = document.createElement("p");
-  for (var i = 0; i < 2; i++)
+  for (var i = 0; i < 2; i++) {
     ratings.innerHTML +=
       "Source: " +
       movie.Ratings[i].Source +
       " Value: " +
       movie.Ratings[i].Value +
       "<br>";
+  }
   var imdbRating = document.createElement("p");
   imdbRating.innerHTML = `imbdRating: ${movie.imdbRating}`;
   var imdbVotes = document.createElement("p");
