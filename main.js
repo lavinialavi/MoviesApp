@@ -6,11 +6,23 @@ let last = "https://movies-api-siit.herokuapp.com/movies?take=10&skip=90";
 let pageNr;
 let nrOfPages;
 
+function showLoader() {
+  var loader = document.getElementsByClassName("loader")[0];
+  loader.classList.add("show");
+}
+
+function hideLoader() {
+  var loader = document.getElementsByClassName("loader")[0];
+  loader.classList.remove("show");
+}
+
 function getDataFromServer(param) {
+  showLoader();
   fetch(param)
     .then(parseResponse)
     .then(displayMovie)
-    .catch(error);
+    .catch(error)
+    .finally(hideLoader);
 }
 function parseResponse(response) {
   if (response.status !== 200) {
@@ -19,8 +31,16 @@ function parseResponse(response) {
   return response.json();
 }
 function error(error) {
-  console.error('There has been a problem with your fetch operation:', error);
+  var errorContainer = document.getElementById("error");
+  errorContainer.innerText = "Error: " + JSON.stringify(error);
 }
+function removeError(){
+  var errorContainer = document.getElementById("error");
+  errorContainer.innerText = "";
+};
+// function error(error) {
+//   console.error('There has been a problem with your fetch operation:', error);
+// }
 function displayMovie(movies) {
   pageNr = movies.pagination.currentPage;
   nrOfPages = movies.pagination.numberOfPages;
@@ -29,6 +49,7 @@ function displayMovie(movies) {
   prev = movies.pagination.links.prev;
   disablePaginationButton();
   emptyContainer(movieList);
+  removeError();
   for (var i = 0; i < movies.results.length; i++) {
     var movie = movies.results[i];
     createMovieItem(movie);
@@ -69,7 +90,7 @@ function createMovieItem(movie) {
   }
   movieList.appendChild(itemContainer);
   
-  const a = document.querySelector(".movieDetailsLink");
+  let a = document.querySelector(".movieDetailsLink");
   a.addEventListener("click", setSessionId(movie));
 }
   // });
