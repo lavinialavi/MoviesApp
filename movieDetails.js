@@ -1,23 +1,6 @@
 let movieURL = `https://movies-api-siit.herokuapp.com/movies/`;
 
-// function getMovieIdFromURL() {
-//   // This is for the case we have multiple variables in URL
-//   var query = window.location.search.substring(1).split('&');
-//   for (var i = 0; i < query.length; i++) {
-//       var queryTemp = query[i].split('=');
-//       // if is the one wee need just returns the value
-//       if(queryTemp[0] === 'movieId') {
-//           return queryTemp[1];
-//       } else {
-//           //this is just in case we do not find the value, returs the first article
-//           //I set this not to crash...
-//           alert("MovieId is invalid! You will be redirected");
-//           window.location.href = "home.html";
-//           //return 1;
-//       }
-//   }
-// }
-// let movieID = getMovieIdFromURL();
+
 let movieID = sessionStorage.getItem("movieID");
 function getMovieItem() {
   fetch(movieURL + movieID)
@@ -64,28 +47,51 @@ function getMovieDetails(movie) {
   var country = document.createElement("p");
   country.innerHTML = `Country: ${movie.Country}`;
   var awards = document.createElement("p");
+  if(movie.Awards != "N/A"){
   awards.innerHTML = `Awards: ${movie.Awards}`;
+  };
   var ratings = document.createElement("p");
-  for (var i = 0; i < 2; i++) {
-    ratings.innerHTML +=
+    ratings.innerHTML =
       "Source: " +
-      movie.Ratings[i].Source +
+      movie.Ratings[0].Source +
       " Value: " +
-      movie.Ratings[i].Value +
+      movie.Ratings[0].Value +
       "<br>";
-  }
+      if(movie.Ratings[1]) {
+        ratings.innerHTML =
+      "Source: " +
+      movie.Ratings[0].Source +
+      " Value: " +
+      movie.Ratings[0].Value
+      }
   var imdbRating = document.createElement("p");
+  if(movie.imdbRating != "N/A"){
   imdbRating.innerHTML = `imbdRating: ${movie.imdbRating}`;
+  };
   var imdbVotes = document.createElement("p");
+  if(movie.imdbVotes != "N/A") {
   imdbVotes.innerHTML = `imdbVotes: ${movie.imdbVotes}`;
+  }
   var imdbID = document.createElement("p");
+  if(movie.imdbID != "N/A") {
   imdbID = `imdbID: ${movie.imdbID}`;
+  }
   var type = document.createElement("p");
+  if(movie.Type != "N/A") {
   type.innerHTML = `Type: ${movie.Type}`;
+  }
   var dvd = document.createElement("p");
+  if(movie.DVD != "N/A"){
   dvd.innerHTML = `DVD: ${movie.DVD}`;
+  }
+  var boxOffice = document.createElement("p");
+  if(movie.boxOffice != "N/A") {
+  boxOffice.innerHTML = `BoxOffice: ${movie.BoxOffice}`;
+  }
   var production = document.createElement("p");
+  if(movie.Production != "N/A") {
   production.innerHTML = `Production: ${movie.Production}`;
+  }
 
   contentContainer.appendChild(title);
   contentContainer.appendChild(year);
