@@ -5,10 +5,17 @@ let movieID = sessionStorage.getItem("movieID");
 function getMovieItem() {
   fetch(movieURL + movieID)
     .then(parseResponse)
-    .then(getMovieDetails);
+    .then(getMovieDetails)
+    .catch(error);
 }
 function parseResponse(response) {
+  if (response.status !== 200) {
+    throw new Error('Network response was not ok');
+  }
   return response.json();
+}
+function error(error) {
+  console.error('There has been a problem with your fetch operation:', error);
 }
 function getMovieDetails(movie) {
   console.log(movie);
@@ -50,18 +57,20 @@ function getMovieDetails(movie) {
   if(movie.Awards != "N/A"){
   awards.innerHTML = `Awards: ${movie.Awards}`;
   };
-  var ratings = document.createElement("p");
-    ratings.innerHTML =
-      "Source: " +
+  var ratings1 = document.createElement("p");
+  if(movie.Ratings[0]) {
+    ratings1.innerHTML =
+      "Ratings by: " +
       movie.Ratings[0].Source +
-      " Value: " +
-      movie.Ratings[0].Value +
-      "<br>";
+      " : " +
+      movie.Ratings[0].Value 
+  }
+  var ratings2 = document.createElement("p");
       if(movie.Ratings[1]) {
-        ratings.innerHTML =
-      "Source: " +
+        ratings2.innerHTML =
+      "Ratings by: " +
       movie.Ratings[1].Source +
-      " Value: " +
+      " : " +
       movie.Ratings[1].Value
       }
   var imdbRating = document.createElement("p");
@@ -106,7 +115,8 @@ function getMovieDetails(movie) {
   contentContainer.appendChild(language);
   contentContainer.appendChild(country);
   contentContainer.appendChild(awards);
-  contentContainer.appendChild(ratings);
+  contentContainer.appendChild(ratings1);
+  contentContainer.appendChild(ratings2);
   contentContainer.appendChild(imdbRating);
   contentContainer.appendChild(imdbVotes);
   // contentContainer.appendChild(imdbID);

@@ -25,7 +25,6 @@
       rel="stylesheet"
       href="//use.fontawesome.com/releases/v5.0.7/css/all.css"
     />
-    <link rel="stylesheet" href="./assets/mainstyle.css" />
     <link rel="stylesheet" href="./assets/movieDetails.css"/>
     <script src="movieDetails.js" defer></script>
   </head>
@@ -77,7 +76,14 @@
 
     <!-- main -->
     <div id="movieDetails" class="row">
-      <div id="posterDetails" class="col-sm-4 poster"></div>
+      <div class="col-sm-4 posterStyling">
+      <div id="posterDetails" class="poster"></div>
+        <div class="buttons">
+        <button type="button" class="btn btn-warning add">Add</button>
+        <button type="button" class="btn btn-warning edit">Edit</button>
+        <button type="button" class="btn btn-danger delete">Delete</button>
+        </div>
+      </div>
       <div id="contentDetails" class="col-sm-4 details"></div>
     </div>
     <footer class="footer container-fluid">
