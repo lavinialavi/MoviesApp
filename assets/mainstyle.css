@@ -30,7 +30,6 @@ html {
     flex-direction: column;
     align-items: center;
     position: relative;
-    border-bottom: calc();
 }
 .card {
     width: 20rem;
