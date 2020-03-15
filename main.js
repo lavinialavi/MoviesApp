@@ -38,9 +38,7 @@ function removeError(){
   var errorContainer = document.getElementById("error");
   errorContainer.innerText = "";
 };
-// function error(error) {
-//   console.error('There has been a problem with your fetch operation:', error);
-// }
+
 function displayMovie(movies) {
   pageNr = movies.pagination.currentPage;
   nrOfPages = movies.pagination.numberOfPages;
@@ -57,10 +55,6 @@ function displayMovie(movies) {
   console.log(movies);
 }
 document.getElementById("movieList");
-
-function setSessionId(movie) {
-  sessionStorage.setItem("movieID", movie._id);
-}
 
 function createMovieItem(movie) {
   const itemContainer = document.createElement("div");
@@ -90,8 +84,7 @@ function createMovieItem(movie) {
   }
   movieList.appendChild(itemContainer);
   
-  let a = document.querySelector(".movieDetailsLink");
-  a.addEventListener("click", setSessionId(movie));
+  itemContainer.addEventListener("click", () => sessionStorage.setItem("movieID", movie._id));
 }
-  // });
+sessionStorage.clear();
 getDataFromServer(apiURL);
