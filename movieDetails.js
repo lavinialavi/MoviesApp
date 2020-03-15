@@ -29,99 +29,100 @@ function getMovieDetails(movie) {
     posterContainer.innerHTML = `
     <img src="./assets/images/marcin-lukasik-uYpOYyJdhRE-unsplash.jpg" alt="Batman"/>`;
   }
-  var title = document.createElement("h4");
+  let title = document.createElement("h4");
   title.innerHTML = `Title: ${movie.Title}`;
+  contentContainer.appendChild(title);
+  
   var year = document.createElement("p");
-  year.innerHTML = `Title: ${movie.Title}`;
+  year.innerHTML = `Year: ${movie.Year}`;
+  contentContainer.appendChild(year);
+  
   var rated = document.createElement("p");
   rated.innerHTML = `Rated: ${movie.Rated}`;
+  contentContainer.appendChild(rated);
   var released = document.createElement("p");
   released.innerHTML = `Released: ${movie.Released}`;
+  contentContainer.appendChild(released);
   var runtime = document.createElement("p");
   runtime.innerHTML = `Runtime: ${movie.Runtime}`;
+  contentContainer.appendChild(runtime);
   var genre = document.createElement("p");
   genre.innerHTML = `Genre: ${movie.Genre}`;
+  contentContainer.appendChild(genre);
   var director = document.createElement("p");
   director.innerHTML = `Director: ${movie.Director}`;
+  contentContainer.appendChild(director);
   var writer = document.createElement("p");
   writer.innerHTML = `Writer: ${movie.Writer}`;
+  contentContainer.appendChild(writer);
   var actors = document.createElement("p");
   actors.innerHTML = `Actors: ${movie.Actors}`;
+  contentContainer.appendChild(actors);
   var plot = document.createElement("p");
   plot.innerHTML = `Plot: ${movie.Plot}`;
+  contentContainer.appendChild(plot);
   var language = document.createElement("p");
   language.innerHTML = `Language: ${movie.Language}`;
+  contentContainer.appendChild(language);
   var country = document.createElement("p");
   country.innerHTML = `Country: ${movie.Country}`;
+  contentContainer.appendChild(country);
+  
   var awards = document.createElement("p");
   if(movie.Awards != "N/A"){
-  awards.innerHTML = `Awards: ${movie.Awards}`;
+    awards.innerHTML = `Awards: ${movie.Awards}`;
   };
-  var ratings1 = document.createElement("p");
-  if(movie.Ratings[0]) {
-    ratings1.innerHTML =
-      "Ratings by: " +
-      movie.Ratings[0].Source +
-      " : " +
-      movie.Ratings[0].Value 
-  }
-  var ratings2 = document.createElement("p");
-      if(movie.Ratings[1]) {
-        ratings2.innerHTML =
-      "Ratings by: " +
-      movie.Ratings[1].Source +
-      " : " +
-      movie.Ratings[1].Value
-      }
-  var imdbRating = document.createElement("p");
-  if(movie.imdbRating != "N/A"){
-  imdbRating.innerHTML = `imbdRating: ${movie.imdbRating}`;
-  };
-  var imdbVotes = document.createElement("p");
-  if(movie.imdbVotes != "N/A") {
-  imdbVotes.innerHTML = `imdbVotes: ${movie.imdbVotes}`;
-  }
-  var imdbID = document.createElement("p");
-  if(movie.imdbID != "N/A") {
-  imdbID = `imdbID: ${movie.imdbID}`;
-  }
-  var type = document.createElement("p");
-  if(movie.Type != "N/A") {
-  type.innerHTML = `Type: ${movie.Type}`;
-  }
-  var dvd = document.createElement("p");
-  if(movie.DVD != "N/A"){
-  dvd.innerHTML = `DVD: ${movie.DVD}`;
-  }
-  var boxOffice = document.createElement("p");
-  if(movie.boxOffice != "N/A") {
-  boxOffice.innerHTML = `BoxOffice: ${movie.BoxOffice}`;
-  }
-  var production = document.createElement("p");
-  if(movie.Production != "N/A") {
-  production.innerHTML = `Production: ${movie.Production}`;
-  }
-
-  contentContainer.appendChild(title);
-  contentContainer.appendChild(year);
-  contentContainer.appendChild(rated);
-  contentContainer.appendChild(released);
-  contentContainer.appendChild(runtime);
-  contentContainer.appendChild(genre);
-  contentContainer.appendChild(director);
-  contentContainer.appendChild(writer);
-  contentContainer.appendChild(actors);
-  contentContainer.appendChild(plot);
-  contentContainer.appendChild(language);
-  contentContainer.appendChild(country);
   contentContainer.appendChild(awards);
-  contentContainer.appendChild(ratings1);
-  contentContainer.appendChild(ratings2);
-  contentContainer.appendChild(imdbRating);
-  contentContainer.appendChild(imdbVotes);
-  // contentContainer.appendChild(imdbID);
-  contentContainer.appendChild(type);
-  contentContainer.appendChild(dvd);
-  contentContainer.appendChild(production);
+  
+  const array = movie.Ratings;
+array.forEach((element) => {
+  var ratings = document.createElement("div");
+  ratings.innerHTML =
+  `Ratings by:  
+  ${element.Source} : 
+  ${element.Value} `
+  contentContainer.appendChild(ratings);
+})
+var metascore = document.createElement("p");
+if(movie.Metascore != "N/A") {
+metascore.innerHTML = `Metascore: ${movie.Metascore}`
+};
+contentContainer.appendChild(metascore);
+var imdbRating = document.createElement("p");
+if(movie.imdbRating != "N/A"){
+  imdbRating.innerHTML = `imbdRating: ${movie.imdbRating}`;
+};
+contentContainer.appendChild(imdbRating);
+var imdbVotes = document.createElement("p");
+if(movie.imdbVotes != "N/A") {
+  imdbVotes.innerHTML = `imdbVotes: ${movie.imdbVotes}`;
+}
+contentContainer.appendChild(imdbVotes);
+var imdbID = document.createElement("p");
+if(movie.imdbID != "N/A") {
+  imdbID = `imdbID: ${movie.imdbID}`;
+}
+// contentContainer.appendChild(imdbID);
+var type = document.createElement("p");
+if(movie.Type != "N/A") {
+  type.innerHTML = `Type: ${movie.Type}`;
+}
+contentContainer.appendChild(type);
+var dvd = document.createElement("p");
+if(movie.DVD != "N/A"){
+  dvd.innerHTML = `DVD: ${movie.DVD}`;
+}
+contentContainer.appendChild(dvd);
+var boxOffice = document.createElement("p");
+if(movie.boxOffice != "N/A") {
+  boxOffice.innerHTML = `BoxOffice: ${movie.BoxOffice}`;
+}
+
+var production = document.createElement("p");
+if(movie.Production != "N/A") {
+  production.innerHTML = `Production: ${movie.Production}`;
+}
+contentContainer.appendChild(production);
+
 }
 getMovieItem();
