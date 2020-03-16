@@ -1,28 +1,18 @@
-html {
-    height: 100%;
-    box-sizing: border-box;
-  }
-  
-  *,
-  *:before,
-  *:after {
-    box-sizing: inherit;
-  }
-  
+
 body{
     background-image: url("./images/elijah-flores-44se2xSCo00-unsplash.jpg");
     background-repeat: repeat-y;
     background-size: cover;
+    min-height: 100vh;
     position: relative;
-    border-bottom: 8.5rem;
+    margin: 0;
+    padding-bottom: 8.5rem;
 }
 .row {
     display: flex;
     justify-content: center;
     margin-top: 2rem;
     color:white;
-    position:relative;
-    padding-bottom: 8.5rem;
 }
 .details {
     padding: 2rem;
@@ -33,11 +23,15 @@ body{
     display: flex;
     flex-direction: column;
     align-items: center;
+    justify-content: center;
+    margin-top: 2rem;
+    color:white;
 }
 .add, .edit, .delete {
     margin: 0.5rem;
 }
 .footer {
+    border-top: 1px solid lightgrey;
     padding: 0.5rem;
     background-color: black;
     color: white;
