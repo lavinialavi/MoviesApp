@@ -7,13 +7,19 @@ let pageNr;
 let nrOfPages;
 
 function showLoader() {
-  var loader = document.getElementsByClassName("loader")[0];
-  loader.classList.add("show");
+  document.querySelectorAll(".loader, .loaderBackground").forEach(element => element.classList.add("show"));
+  // var loaderBackground = document.getElementsByClassName("loaderBackgound")[0];
+  // var loader = document.getElementsByClassName("loader")[0];
+  // loaderBackground.classList.add("show");
+  // loader.classList.add("show");
 }
 
 function hideLoader() {
-  var loader = document.getElementsByClassName("loader")[0];
-  loader.classList.remove("show");
+  document.querySelectorAll(".loader, .loaderBackground").forEach(element => element.classList.remove("show"));
+  // var loader = document.getElementsByClassName("loader")[0];
+  // var loaderBackground = document.querySelector(".loaderBackgound");
+  // loader.classList.remove("show");
+  // loaderBackground.classList.remove("show");
 }
 
 function getDataFromServer(param) {

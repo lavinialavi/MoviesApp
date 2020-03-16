@@ -19,9 +19,9 @@ function error(error) {
 }
 function getMovieDetails(movie) {
   console.log(movie);
+  const titleContainer = document.getElementById("titleDetails");
   const posterContainer = document.getElementById("posterDetails");
   const contentContainer = document.getElementById("contentDetails");
-
   if (movie.Poster != "N/A") {
     posterContainer.innerHTML = `
     <img src='${movie.Poster}' alt="Batman movie poster"/>`;
@@ -29,14 +29,13 @@ function getMovieDetails(movie) {
     posterContainer.innerHTML = `
     <img src="./assets/images/marcin-lukasik-uYpOYyJdhRE-unsplash.jpg" alt="Batman"/>`;
   }
+  
   let title = document.createElement("h4");
-  title.innerHTML = `Title: ${movie.Title}`;
-  contentContainer.appendChild(title);
-  
-  var year = document.createElement("p");
-  year.innerHTML = `Year: ${movie.Year}`;
-  contentContainer.appendChild(year);
-  
+  title.innerHTML = ` ${movie.Title} (${movie.Year})`;
+  titleContainer.appendChild(title);
+  var plot = document.createElement("h6");
+  plot.innerHTML = movie.Plot;
+  contentContainer.appendChild(plot);
   var rated = document.createElement("p");
   rated.innerHTML = `Rated: ${movie.Rated}`;
   contentContainer.appendChild(rated);
@@ -58,9 +57,7 @@ function getMovieDetails(movie) {
   var actors = document.createElement("p");
   actors.innerHTML = `Actors: ${movie.Actors}`;
   contentContainer.appendChild(actors);
-  var plot = document.createElement("p");
-  plot.innerHTML = `Plot: ${movie.Plot}`;
-  contentContainer.appendChild(plot);
+  
   var language = document.createElement("p");
   language.innerHTML = `Language: ${movie.Language}`;
   contentContainer.appendChild(language);
