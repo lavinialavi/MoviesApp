@@ -1,124 +1,112 @@
-/* html {
-    height: 100%;
-    box-sizing: border-box;
-  }
-  
-  *,
-  *:before,
-  *:after {
-    box-sizing: inherit;
-  } */
-  
-  body {
-    min-height: 100vh;
-    
-
-  }
-
-.background-container {
-    background-image: url('./images/joshua-sortino-LqKhnDzSF-8-unsplash.jpg');
-    background-repeat: repeat-y;
-    background-size: contain;
-    position: relative;
-    padding-bottom: 8.5rem;
+body {
+  background-image: url("./images/joshua-sortino-LqKhnDzSF-8-unsplash.jpg");
+  background-repeat: repeat-y;
+  background-size: cover;
+  min-height: 100vh;
+  position: relative;
+  margin: 0;
+  padding-bottom: 8.5rem;
 }
+
 .loaderBackground {
-    position: fixed;
-    left: 0;
-    right: 0;
-    width: 100%;
-    height: 100%;
-    background-color: black;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+  position: fixed;
+  left: 0;
+  right: 0;
+  width: 100%;
+  height: 100%;
+  background-color: black;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 .loaderBackground.show {
-    z-index: 1;
+  z-index: 1;
 }
 .movie-list-title {
-    background: rgba(0, 0, 0, 0.8);
-    color: white;
-    padding: 1rem;
+  background: rgba(0, 0, 0, 0.8);
+  color: white;
+  padding: 1rem;
 }
 .movieList-container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
 }
 .card {
-    width: 20rem;
-   
+  width: 16rem;
+  height: 45rem;
 }
-
+.deleteButton {
+  z-index: 100;
+  position: relative;
+}
 .page-counter {
-    display: flex;
-    justify-content: center;
-    background: rgba(0, 0, 0, 0.8);
-    padding-bottom: 1rem;
+  display: flex;
+  justify-content: center;
+  background: rgba(0, 0, 0, 0.8);
+  padding-bottom: 1rem;
 }
 .page-counter .btn {
-    color: white;
-    border: 0.1rem solid white;
-    margin: 1rem;
+  color: white;
+  border: 0.1rem solid white;
+  margin: 1rem;
 }
 .footer {
-    padding: 0.5rem;
-    border-top: 1px solid lightgrey;
-    background-color: black;
-    color: white;
-    text-align: center;
-    position: absolute;
-    bottom: 0;
+  padding: 0.5rem;
+  border-top: 1px solid lightgrey;
+  background-color: black;
+  color: white;
+  text-align: center;
+  position: absolute;
+  bottom: 0;
 }
 .footer a {
-    color: rgb(255,193,7);
-   
+  color: rgb(255, 193, 7);
 }
 
 .loader.show {
-    display: block;
-    position: absolute;
+  display: block;
+  position: absolute;
 }
 
 .hide {
-    visibility: hidden;
+  visibility: hidden;
 }
 .error {
-    color: #FC3D21;
-    position: absolute;
+  color: #fc3d21;
+  position: absolute;
 }
 
 .loader {
-    display: none;
-    border: 6px solid #FC3D21;
-    border-radius: 50%;
-    border-top: 6px solid rgb(255,193,7);
-    width: 50px;
-    height: 50px;
-    -webkit-animation: spin 2s linear infinite;
-    /* Safari */
-    animation: spin 2s linear infinite;
+  display: none;
+  border: 6px solid #fc3d21;
+  border-radius: 50%;
+  border-top: 6px solid rgb(255, 193, 7);
+  width: 50px;
+  height: 50px;
+  -webkit-animation: spin 2s linear infinite;
+  /* Safari */
+  animation: spin 2s linear infinite;
 }
 
 /* Safari */
 @-webkit-keyframes spin {
-    0% {
-        -webkit-transform: rotate(0deg);
-    }
+  0% {
+    -webkit-transform: rotate(0deg);
+  }
 
-    100% {
-        -webkit-transform: rotate(360deg);
-    }
+  100% {
+    -webkit-transform: rotate(360deg);
+  }
 }
 
 @keyframes spin {
-    0% {
-        transform: rotate(0deg);
-    }
+  0% {
+    transform: rotate(0deg);
+  }
 
-    100% {
-        transform: rotate(360deg);
-    }
+  100% {
+    transform: rotate(360deg);
+  }
 }

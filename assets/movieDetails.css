@@ -1,45 +1,45 @@
-
-body{
-    background-image: url("./images/elijah-flores-44se2xSCo00-unsplash.jpg");
-    background-repeat: repeat-y;
-    background-size: cover;
-    min-height: 100vh;
-    position: relative;
-    margin: 0;
-    padding-bottom: 8.5rem;
+body {
+  background-image: url("./images/elijah-flores-44se2xSCo00-unsplash.jpg");
+  background-repeat: repeat-y;
+  background-size: cover;
+  min-height: 100vh;
+  position: relative;
+  margin: 0;
+  padding-bottom: 8.5rem;
 }
 .row {
-    display: flex;
-    justify-content: center;
-    margin-top: 2rem;
-    color:white;
+  display: flex;
+  justify-content: center;
+  margin-top: 2rem;
+  color: white;
 }
 .details {
-    padding: 2rem;
-    background-color: black;
+  padding: 2rem;
+  background-color: black;
 }
 .posterStyling {
-    background-color: black;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    margin-top: 2rem;
-    color:white;
+  background-color: black;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin-top: 2rem;
+  color: white;
 }
-.add, .edit, .delete {
-    margin: 0.5rem;
+.add,
+.edit,
+.delete {
+  margin: 0.5rem;
 }
 .footer {
-    border-top: 1px solid lightgrey;
-    padding: 0.5rem;
-    background-color: black;
-    color: white;
-    text-align: center;
-    position: absolute;
-    bottom: 0;
+  border-top: 1px solid lightgrey;
+  padding: 0.5rem;
+  background-color: black;
+  color: white;
+  text-align: center;
+  position: absolute;
+  bottom: 0;
 }
 .footer a {
-    color: rgb(255,193,7);
-   
+  color: rgb(255, 193, 7);
 }
