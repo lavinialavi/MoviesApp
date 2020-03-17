@@ -40,9 +40,16 @@ body {
   width: 20rem;
   height: 47rem;
 }
+/* .card-body {
+  display: flex;
+  flex-direction: column;
+  justify-content: start;
+} */
+
 .deleteButton {
   z-index: 100;
-  position: relative;
+  position: absolute;
+  bottom: 1rem;
 }
 .page-counter {
   display: flex;
