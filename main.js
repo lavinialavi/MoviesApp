@@ -78,6 +78,7 @@ function createMovieItem(movie) {
 }
 movieList.appendChild(itemContainer);
 itemContainer.addEventListener("click", () => sessionStorage.setItem("movieID", movie._id));
+deleteButton = document.getElementsByClassName("deleteButton")[0];
 itemContainer.addEventListener("click", deleteMovie);
 }
 
