@@ -19,12 +19,20 @@ window.onload = function () {
         if (password.match(passPattern)) {
 
             if (password == repeatPassword) {
-                setRegisteredUser(user, password);
+                let apiResponse = setRegisteredUser(user, password);
+                if (apiResponse === true) {
+                    loginNotif.innerHTML = "<h4>Login Successful. Welcome " + user + ", you will now" +
+                        " be redirected to the Home Page.</h4>";
+                    loginNotif.style.backgroundColor = "#0f9e27";
+                    setTimeout(() => { document.location.href = "index.html"; }, 3500);
+                } else if (apiResponse === false) {
+                    loginNotif.innerHTML = "<h4>Register fail</h4>";
+                    loginNotif.style.backgroundColor = "#0f9e27";
+                } else {
+                    loginNotif.innerHTML = apiResponse;
+                }
 
-                loginNotif.innerHTML = "<h4>Login Successful. Welcome " + user + ", you will now" +
-                    " be redirected to the Home Page.</h4>";
-                loginNotif.style.backgroundColor = "#0f9e27";
-                setTimeout(() => { document.location.href = "login.html"; }, 3500);
+                
             } else {
                 loginNotif.innerHTML = "<h4>Password doesn't match!</h4>";
                 loginNotif.style.backgroundColor = "#ba1a14";
@@ -43,10 +51,36 @@ window.onload = function () {
     });
 
     function setRegisteredUser(username, password) {
-        registeredUser.set(username, password);
+        //add api call
+        let apiResponse = false;
+        $.ajax("https://movies-api-siit.herokuapp.com/auth/register", {
+            method:"POST",
+            data: {
+                'username': username,
+                'password': password
+            },
+            success:(response) => {
+                console.log(response);
+                //save auth token to storage
+                //save user name to storage
+                apiResponse = true;
+            },
+            error:(xhr) => {
+                console.log(xhr);
+                if (xhr.status == 409) {
+                    apiResponse = xhr.responseJson.message;
+                    return;
+                }
+
+                apiResponse = false;
+            }
+				});
+
+        return apiResponse;
+        // registeredUser.set(username, password);
     }
 
-    function getRegisteredUser(username) {
-        return registeredUser.get(username);
-    }
+    // function getRegisteredUser(username) {
+    //     return registeredUser.get(username);
+    // }
 }
