@@ -8,6 +8,7 @@ let nrOfPages;
 
 
 function getDataFromServer(param) {
+  checkPreviousPage();
   showLoader();
   fetch(param)
     .then(parseResponse)
@@ -78,9 +79,16 @@ function createMovieItem(movie) {
 }
 movieList.appendChild(itemContainer);
 itemContainer.addEventListener("click", () => sessionStorage.setItem("movieID", movie._id));
+deleteButton = document.getElementsByClassName("deleteButton")[0];
 itemContainer.addEventListener("click", deleteMovie);
 }
 
-
+function checkPreviousPage(){
+  let isRegisterPage = sessionStorage.getItem("register");
+  if(isRegisterPage){
+  document.getElementById("id01").style.display = "block";
+  sessionStorage.setItem("register", null);
+  }
+}
 
 getDataFromServer(apiURL);
