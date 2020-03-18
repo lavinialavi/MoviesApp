@@ -1,11 +1,11 @@
 function deleteMovie() {
   const movieID = sessionStorage.getItem("movieID");
-  // const accessToken = sessionStorage.getItem("accessToken");
+  const accessToken = sessionStorage.getItem("accessToken");
   fetch(apiURL + "/" + movieID, {
     method: "DELETE",
     headers: {
-      "Content-Type": "application/json"
-      // "x-auth-token": accessToken
+      "Content-Type": "application/json",
+      "x-auth-token": accessToken
     }
   })
     .then(response)
@@ -19,5 +19,6 @@ function response(response) {
     throw new Error("Network response was not ok");
   } else {
     alert("The movie was deleted");
+    getDataFromServer(apiURL);
   }
 }

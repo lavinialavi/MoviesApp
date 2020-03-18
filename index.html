@@ -25,9 +25,10 @@
   <script src="pages.js" defer></script>
   <script src="login.js" defer></script>
   <script src="deleteMovie.js" defer></script>
+  <script src="addMovie.js" defer></script>
 
 
-  <style>
+  <!-- <style>
     body {
       font-family: Arial, Helvetica, sans-serif;
     }
@@ -171,7 +172,7 @@
         width: 100%;
       }
     }
-  </style>
+  </style> -->
 </head>
 
 <body>
@@ -193,6 +194,9 @@
           </li>
           <li class="nav-item">
             <a class="nav-link" href="registerindex.html">Register</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#" data-toggle="modal" data-target="#addMovieModal">Add movie</a>
           </li>
           <li class="nav-item">
             <a class="nav-link home" href="index.html">Home</a>
@@ -258,6 +262,124 @@
       </form>
     </div>
 
+    <!-- Add New Movie Modal -->
+      <form class="addMovieForm" method="POST">
+      <div class="modal fade" id="addMovieModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="exampleModalLongTitle">Add New Movie</h5>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="modal-body">
+              <div class="form-group row">
+              <label for="movieTitle" class="col-sm-3 col-form-label">Title :</label>
+              <div class="class="col-sm-9">
+              <input type="text" class="newMovie" id="movieTitle" required/>
+              </div>
+              </div>
+              <div class="form-group row">
+
+                <label for="movieYear" class="col-sm-3 col-form-label">Year :</label>
+                <div class="class="col-sm-9">
+                <input type="text" class="newMovie" id="movieYear" required/>
+                </div>
+              </div>
+              <div class="form-group row">
+                <label for="movieRated" class="col-sm-3 col-form-label">Rated :</label>
+                <div class="class="col-sm-9">
+                <input type="text" class="newMovie" id="movieRated" required/>
+                </div>
+                </div>
+                <div class="form-group row">
+                <label for="movieReleased" class="col-sm-3 col-form-label">Released :</label>
+                <div class="class="col-sm-9">
+                <input type="text" class="newMovie" id="movieReleased" required/>
+                </div>
+                </div>
+                <div class="form-group row">
+                <label for="movieRuntime" class="col-sm-3 col-form-label">Runtime :</label>
+                <div class="class="col-sm-9">
+                <input type="text" class="newMovie" id="movieRuntime" required/>
+                </div>
+                </div>
+                <div class="form-group row">
+                <label for="movieGenre" class="col-sm-3 col-form-label">Genre :</label>
+                <div class="class="col-sm-9">
+                <input type="text" class="newMovie" id="movieGenre" required/>
+                </div>
+                </div>
+                <div class="form-group row">
+                <label for="movieDirector" class="col-sm-3 col-form-label">Director :</label>
+                <div class="class="col-sm-9">
+                <input type="text" class="newMovie" id="movieDirector" required/>
+                </div>
+                </div>
+                <div class="form-group row">
+                <label for="movieWriter" class="col-sm-3 col-form-label">Writer :</label>
+                <div class="class="col-sm-9">
+                <input type="text" class="newMovie" id="movieWriter" required/>
+                </div>
+                </div>
+                <div class="form-group row">
+                <label for="movieActors" class="col-sm-3 col-form-label">Actors :</label>
+                <div class="class="col-sm-9">
+                <input type="text" class="newMovie" id="movieActors" required/>
+                </div>
+                </div>
+                <div class="form-group row">
+                <label for="moviePlot" class="col-sm-3 col-form-label">Plot :</label>
+                <div class="class="col-sm-9">
+                <input type="text" class="newMovie" id="moviePlot" required/>
+                </div>
+                </div>
+                <div class="form-group row">
+                <label for="movieLanguage" class="col-sm-3 col-form-label">Language :</label>
+                <div class="class="col-sm-9">
+                <input type="text" class="newMovie" id="movieLanguage" required/>
+                </div>
+                </div>
+                <div class="form-group row">
+                <label for="movieCountry" class="col-sm-3 col-form-label">Country :</label>
+                <div class="class="col-sm-9">
+                <input type="text" class="newMovie" id="movieCountry" required/>
+                </div>
+                </div>
+                <div class="form-group row">
+                <label for="movieAwards" class="col-sm-3 col-form-label">Awards :</label>
+                <div class="class="col-sm-9">
+                <input type="text" class="newMovie" id="movieAwards"/>
+                </div>
+                </div>
+                <div class="form-group row">
+                <label for="moviePoster" class="col-sm-3 col-form-label">Poster :</label>
+                <div class="class="col-sm-9">
+                <input type="text" class="newMovie" id="moviePoster"/>
+                </div>
+                </div>
+                <div class="form-group row">
+                <label for="movieRatings" class="col-sm-3 col-form-label">Ratings :</label>
+                <div class="class="col-sm-9">
+                <input type="text" class="newMovie" id="movieRatings"/>
+                </div>
+                </div>
+              </div>
+              <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-primary saveMovie">Save changes</button>
+              </div>
+            
+          </div>
+          </div>
+        
+        </div>
+        
+        </form>
+            <!-- footer -->
+        
+        
 
     <!-- footer -->
     <footer class="footer container-fluid">
@@ -270,10 +392,7 @@
           href="https://www.linkedin.com/in/oana-fuia-04741428/" target="_blank">Oana</a>
         and <a href="https://www.linkedin.com/in/sebastian-mihai-s%C4%83s%C4%83ujan-0a3161192/"
           target="_blank">Sebastian</a>.</p>
-    </footer>
-
-
-    <!-- <script src="main.js"></script>     -->
+    </footer> 
 </body>
 
 </html>
