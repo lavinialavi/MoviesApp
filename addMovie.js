@@ -1,6 +1,6 @@
 let newMovie;
-function addMovie() {
-  // e.preventDefault();
+function addMovie(e) {
+  e.preventDefault();
   newMovie = {
     id: Date.now(),
     Title: document.getElementById("movieTitle").value,
@@ -19,18 +19,24 @@ function addMovie() {
     Poster: document.getElementById("moviePoster").value
   };
   console.log(newMovie);
+  const accesToken = sessionStorage.getItem("accessToken");
+  console.log(accesToken);
   fetch(apiURL, {
     headers: {
-      // "x-auth-token": tokenAccess,
+      "x-auth-token": accesToken,
       "Content-Type": "application/json"
     },
     method: "POST",
     body: JSON.stringify(newMovie)
   })
     .then(response => {
+      if(response.status == 200) {
+        alert("Movie added!");
+      }
       if (response.status === 403) {
         alert("You need to be authenticated to be able to create a movie");
       }
+      console.log(response.status);
       return response.json();
     })
     .then(data => {
@@ -42,10 +48,8 @@ function addMovie() {
   const addMovieForm = document.querySelector(".addMovieForm");
   addMovieForm.reset();
 }
-const saveMovie = document.querySelector(".saveMovie");
 document.addEventListener("DOMContentLoaded", () => {
+  const saveMovie = document.querySelector(".saveMovie");
   saveMovie.addEventListener("click", addMovie);
 });
 
-// const tokenAccess = sessionStorage.getItem("accessToken");
-// console.log(tokenAccess);

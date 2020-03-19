@@ -1,7 +1,4 @@
 body {
-  /* background-image: url("./images/joshua-sortino-LqKhnDzSF-8-unsplash.jpg");
-  background-repeat: repeat-y;
-  background-size: cover; */
   min-height: 100vh;
   position: relative;
   margin: 0;
@@ -37,8 +34,8 @@ body {
   position: relative;
 }
 .card {
-  width: 20rem;
-  height: 47rem;
+  width: 16rem;
+  height: 45rem;
 }
 /* .card-body {
   display: flex;

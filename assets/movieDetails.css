@@ -26,6 +26,9 @@ body {
   margin-top: 2rem;
   color: white;
 }
+.poster img{
+  width: 100%;
+}
 .add,
 .edit,
 .delete {
